@@ -1,33 +1,215 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - Scribec</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 40px auto; padding: 20px; color: #333; }
-        h1, h2 { color: #4F46E5; }
+        :root {
+            --primary-indigo: #4F46E5;
+            --primary-light: #E0E7FF;
+            --secondary-amber: #F59E0B;
+            --bg-light: #F8FAFC;
+            --surface-light: #FFFFFF;
+            --text-light: #0F172A;
+            --text-variant-light: #64748B;
+            --outline-light: #E2E8F0;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-light: #0F172A;
+                --surface-light: #1E293B;
+                --text-light: #F1F5F9;
+                --text-variant-light: #94A3B8;
+                --outline-light: #334155;
+                --primary-light: #3730A3;
+            }
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-light);
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 40px;
+            background: var(--surface-light);
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--outline-light);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-indigo);
+            margin-bottom: 10px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--secondary-amber);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .last-updated {
+            color: var(--text-variant-light);
+            font-size: 0.95rem;
+            font-weight: 400;
+            background: var(--primary-light);
+            padding: 6px 16px;
+            border-radius: 20px;
+            display: inline-block;
+        }
+
+        h2 {
+            color: var(--primary-indigo);
+            font-size: 1.5rem;
+            margin-top: 40px;
+            margin-bottom: 16px;
+            font-weight: 600;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--outline-light);
+        }
+
+        p {
+            margin-bottom: 16px;
+            color: var(--text-variant-light);
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background: var(--bg-light);
+            margin-bottom: 12px;
+            padding: 16px 20px;
+            border-radius: 12px;
+            border: 1px solid var(--outline-light);
+            color: var(--text-variant-light);
+            position: relative;
+            padding-left: 48px;
+        }
+
+        li::before {
+            content: "✓";
+            position: absolute;
+            left: 20px;
+            top: 16px;
+            color: var(--secondary-amber);
+            font-weight: bold;
+        }
+
+        strong {
+            color: var(--text-light);
+        }
+
+        a {
+            color: var(--primary-indigo);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: var(--secondary-amber);
+        }
+
+        .contact-box {
+            background: linear-gradient(135deg, rgba(79, 70, 229, 0.1), rgba(245, 158, 11, 0.1));
+            padding: 24px;
+            border-radius: 16px;
+            text-align: center;
+            margin-top: 40px;
+            border: 1px solid var(--outline-light);
+        }
+
+        .contact-box a {
+            display: inline-block;
+            margin-top: 10px;
+            background: var(--primary-indigo);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .contact-box a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
+            color: white;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                margin: 20px;
+                padding: 24px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <h1>Privacy Policy for Scribec</h1>
-    <p><strong>Last Updated: April 2026</strong></p>
-    
-    <h2>1. Introduction</h2>
-    <p>Scribec ("we", "our", or "us") respects your privacy. This Privacy Policy explains how we handle data when you use the Scribec Android application.</p>
+    <div class="container">
+        <header>
+            <div class="logo">Scribec<span>.</span></div>
+            <h1>Privacy Policy</h1>
+            <div class="last-updated">Last Updated: April 2026</div>
+        </header>
+        
+        <h2>1. Introduction</h2>
+        <p>Scribec ("we", "our", or "us") respects your privacy. This Privacy Policy explains how we handle data when you use the Scribec Android application. We are committed to transparency and securing your information.</p>
 
-    <h2>2. Data Collection & On-Device Processing</h2>
-    <p>Scribec is designed with privacy in mind. The core features of the app, including screen recording, microphone capture, and speech-to-text transcription, operate entirely locally on your device. We do not transmit your screen recordings, audio files, or generated transcripts to any external servers.</p>
+        <h2>2. Data Collection & Processing</h2>
+        <p>Scribec captures your screen and audio to provide seamless recording and transcription features. While <strong>screen recordings and video files are processed and stored entirely locally</strong> on your device, our advanced speech-to-text transcription feature requires sending <strong>audio data to a secure third-party API (Groq API)</strong>. Once the audio is transcribed, the resulting text is stored locally on your device.</p>
 
-    <h2>3. Required Permissions</h2>
-    <ul>
-        <li><strong>Microphone:</strong> Used solely to capture audio for your screen recordings and to generate local transcripts.</li>
-        <li><strong>Screen Capture (MediaProjection):</strong> Used solely to record your screen when you initiate a recording session.</li>
-        <li><strong>Storage:</strong> Used to save your recorded video files and transcripts locally on your device.</li>
-    </ul>
+        <h2>3. Required Permissions</h2>
+        <p>To provide you with the best experience, Scribec requests the following permissions:</p>
+        <ul>
+            <li><strong>Microphone:</strong> Used to capture audio for your screen recordings and for cloud-based speech-to-text transcription.</li>
+            <li><strong>Screen Capture (MediaProjection):</strong> Used solely to record your screen locally when you initiate a recording session.</li>
+            <li><strong>Storage:</strong> Used to securely save your recorded video files and text transcripts directly on your device.</li>
+            <li><strong>Internet:</strong> Required to securely transmit audio segments to our transcription provider (Groq) and for usage analytics.</li>
+        </ul>
 
-    <h2>4. Third-Party Services</h2>
-    <p>The app may use third-party services that collect information used to identify you, specifically for analytics, crash reporting, and monetization (Google Play Billing for subscriptions). These services have their own privacy policies.</p>
+        <h2>4. Third-Party Services</h2>
+        <p>The app integrates specific third-party services to deliver its core features and maintain reliability. Audio tracks are processed by Groq API for Whisper transcription. Additionally, the app may use services for analytics, crash reporting, and monetization (e.g., Google Play Billing for subscriptions). These services adhere to their respective privacy policies.</p>
 
-    <h2>5. Contact Us</h2>
-    <p>If you have any questions about this Privacy Policy, please contact us at: naeem.sabir@gmail.com</p>
+        <h2>5. Contact Us</h2>
+        <div class="contact-box">
+            <p>If you have any questions or concerns about this Privacy Policy, our data practices, or your privacy rights, please reach out to us.</p>
+            <a href="mailto:nsabir.studios@gmail.com">nsabir.studios@gmail.com</a>
+        </div>
+    </div>
 </body>
 </html>
